@@ -46,6 +46,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([FromBody] CreateUserDto dto)
     {
+        _logger.LogInformation("Создание пользователя {0}", dto.Email);
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var created = await _service.CreateAsync(dto);
