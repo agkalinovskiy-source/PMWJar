@@ -28,7 +28,7 @@ builder.Services.AddSwaggerGen(options =>
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("Default")
-                      ?? "Data Source=myapi.db"));
+                      ?? "Data Source=pmw.db"));
 
 // Repositories
 builder.Services.AddScoped<IRepository<Product>, Repository<Product>>();
