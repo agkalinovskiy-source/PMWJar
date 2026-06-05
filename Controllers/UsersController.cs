@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApi.DTOs;
 using MyApi.Services;
@@ -44,6 +45,7 @@ public class UsersController : ControllerBase
     [HttpPost(nameof(Create))]
     [ProducesResponseType(typeof(UserDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [AllowAnonymous]
     public async Task<IActionResult> Create([FromBody] CreateUserDto dto)
     {
         _logger.LogInformation("Создание пользователя {0}", dto.Email);
