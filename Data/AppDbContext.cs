@@ -33,10 +33,10 @@ public class AppDbContext : DbContext
         });
 
         // Seed data
-        modelBuilder.Entity<Product>().HasData(
-            new Product { Id = 1, Name = "Ноутбук", Description = "15.6\" Full HD", Price = 75000m, Stock = 10 },
-            new Product { Id = 2, Name = "Смартфон", Description = "128GB, 5G", Price = 45000m, Stock = 25 }
-        );
+        //modelBuilder.Entity<Product>().HasData(
+        //    new Product { Id = 1, Name = "Ноутбук", Description = "15.6\" Full HD", Price = 75000m, Stock = 10 },
+        //    new Product { Id = 2, Name = "Смартфон", Description = "128GB, 5G", Price = 45000m, Stock = 25 }
+        //);
 
         modelBuilder.Entity<User>().HasData(
             new User { Id = 1, FirstName = "Иван", LastName = "Иванов", Email = "ivan@example.com" }
