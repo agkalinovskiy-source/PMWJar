@@ -41,7 +41,7 @@ public class UsersController : ControllerBase
     }
 
     /// <summary>Создать нового пользователя</summary>
-    [HttpPost]
+    [HttpPost(nameof(Create))]
     [ProducesResponseType(typeof(UserDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([FromBody] CreateUserDto dto)
